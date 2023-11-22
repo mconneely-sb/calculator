@@ -1,0 +1,140 @@
+<application xmlns="http://wadl.dev.java.net/2009/02">
+   <doc xml:lang="en" title="Ecommerce"/>
+   <resources base="http://localhost:8021/">
+      <resource path="login/" id="Login">
+         <doc xml:lang="en" title="Login"/>
+         <param name="password" type="xs:string" required="false" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <param name="username" default="Login" type="xs:string" required="false" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <method name="GET" id="Login">
+            <doc xml:lang="en" title="Login"/>
+            <request>
+               <param name="username" default="Login" type="xs:string" required="false" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+               <param default="Login123" name="password" type="xs:string" required="false" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+               <param name="Accept" default="application/json" type="xs:string" style="header" required="true" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+               <param name="Header_1" default="Test" type="xs:string" style="header" required="true" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+            </request>
+            <response status="0">
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+            </response>
+            <response status="405 500">
+               <representation mediaType="" element="data"/>
+            </response>
+            <response status="500">
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+            </response>
+            <response status="401">
+               <representation mediaType="application/json" element="log:Fault" xmlns:log="http://localhost/login"/>
+            </response>
+            <response status="200">
+               <representation mediaType="application/json" element="log:Response" xmlns:log="http://localhost/login"/>
+            </response>
+            <response status="404">
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+            </response>
+            <response status="405">
+               <representation mediaType="" element="data"/>
+            </response>
+            <response status="">
+               <representation mediaType="application/json"/>
+            </response>
+            <response status="403">
+               <representation mediaType="text/html" element="html"/>
+            </response>
+         </method>
+      </resource>
+      <resource path="buy" id="buy">
+         <doc xml:lang="en" title="buy"/>
+         <param name="sessionid" type="xs:string" required="false" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <param name="buystring" type="xs:string" required="false" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <method name="GET" id="Method 1">
+            <doc xml:lang="en" title="Method 1"/>
+            <request>
+               <param name="sessionid" type="xs:string" required="false" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+               <param default="Item 1" name="buystring" type="xs:string" required="false" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+            </request>
+            <response status="">
+               <representation mediaType="application/json"/>
+            </response>
+            <response status="405">
+               <representation mediaType="" element="data"/>
+            </response>
+            <response status="200">
+               <representation mediaType="application/json" element="buy:Response" xmlns:buy="http://localhost/buy"/>
+            </response>
+            <response status="0">
+               <representation mediaType="" element="data"/>
+            </response>
+         </method>
+      </resource>
+      <resource path="logout" id="logout">
+         <doc xml:lang="en" title="logout"/>
+         <param name="sessionid" type="xs:string" required="false" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <method name="GET" id="Method 1">
+            <doc xml:lang="en" title="Method 1"/>
+            <request>
+               <param name="sessionid" type="xs:string" required="false" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+               <param name="Accept" default="application/json" type="xs:string" style="header" required="true" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+            </request>
+            <response status="500">
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+               <representation mediaType="" element="data"/>
+            </response>
+            <response status="404">
+               <representation mediaType="application/xml"/>
+               <representation mediaType="application/json" element="log:Fault" xmlns:log="http://localhost/logout"/>
+            </response>
+            <response status="200">
+               <representation mediaType="application/json" element="log:Response" xmlns:log="http://localhost/logout"/>
+            </response>
+            <response status="0">
+               <representation mediaType="" element="data"/>
+            </response>
+         </method>
+      </resource>
+      <resource path="search" id="search">
+         <doc xml:lang="en" title="search"/>
+         <param name="sessionid" type="xs:string" required="false" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <param name="searchstring" type="xs:string" required="false" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+         <method name="GET" id="Method 1">
+            <doc xml:lang="en" title="Method 1"/>
+            <request>
+               <param name="sessionid" type="xs:string" required="false" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+               <param default="Item 1" name="searchstring" type="xs:string" required="false" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/xml"/>
+               <representation mediaType="application/json" element="sear:Response" xmlns:sear="http://localhost/search"/>
+            </response>
+            <response status="0">
+               <representation mediaType="" element="data"/>
+            </response>
+            <response status="400">
+               <representation mediaType="text/html;charset=iso-8859-1" element="html"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>
